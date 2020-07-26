@@ -2,15 +2,15 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   * {
-    margin:0;
-    padding:0;
+    margin:0!important;
+    padding:0!important;
     box-sizing:border-box;
-
     -webkit-font-smoothing: antialiased;
   }
 
   html, body, #root {
-    height: 100%;
+    height: 100vh;
+    overflow:hidden;
   }
 
   *, button, input {
