@@ -4,5 +4,5 @@ export const Container = styled.div`
   background:blue;
   height: 100vh;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
 `;

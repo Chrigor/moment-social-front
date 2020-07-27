@@ -8,14 +8,16 @@ import { Container } from './styles';
 const Feed: React.FC = () => {
   return (
     <>
-    <Header/>
-    <Container>
+      <Header />
+      <Container>
+        
 
-      <SideBar />
-      <FeedComponent />
-      <Messenger/>
-      
-    </Container>
+          <SideBar />
+          <FeedComponent />
+          <Messenger />
+
+
+      </Container>
     </>
   );
 }

@@ -1,24 +1,20 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   * {
-    margin:0!important;
-    padding:0!important;
+    margin: 0;
+    padding:0;
     box-sizing:border-box;
-    -webkit-font-smoothing: antialiased;
+    color:var(--white);
   }
-
   html, body, #root {
-    height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
     overflow:hidden;
   }
-
   *, button, input {
     border:0;
-    outline:0;
-
-    font-family:'Roboto', sans-serif;
+    background:none;
+    font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-`
-
-  
+`;
