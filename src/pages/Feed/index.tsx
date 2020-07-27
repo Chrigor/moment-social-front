@@ -10,13 +10,9 @@ const Feed: React.FC = () => {
     <>
       <Header />
       <Container>
-        
-
           <SideBar />
           <FeedComponent />
           <Messenger />
-
-
       </Container>
     </>
   );

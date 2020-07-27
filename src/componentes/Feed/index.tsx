@@ -1,28 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Container } from './styles';
+import NewPost from '../NewPost';
+import Post from '../Post';
 
 const Feed: React.FC = () => {
+
+  const [posts, setPosts] = useState([]);
+
   return (
     <Container>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum est consequatur unde iure inventore dolorum, excepturi ab quasi amet nemo enim quos, nostrum autem. Saepe quod nostrum excepturi ipsum architecto?</p>
+      <NewPost />
+      <Post contentPost="hello teste asdastgdfashb asdugasyhdgashgd hadsahdh agdhasgvghdgasghjdg asgd dashudashuiasduihdas dashsdahasdjkdas nmdasghdasghasdhdash" id={12135} id_user={4} liked />
+      <Post contentPost="hello" id={12135} id_user={4} liked shared />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
+      <Post contentPost="hello" id={12135} id_user={4} />
     </Container>
   );
 }
