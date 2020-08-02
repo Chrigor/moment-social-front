@@ -1,32 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Container } from './styles';
 import NewPost from '../NewPost';
 import Post from '../Post';
 
+import api from '../../services/api';
+
+
+interface Posts {
+  _id: string;
+  id_user:number;
+  content:string;
+}
+
 const Feed: React.FC = () => {
 
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Posts[]>([]);
+
+  useEffect(() => {
+    async function getPosts(page = 1) {
+      let { data } = await api.get('/post');
+      console.log(data);
+      setPosts(data);
+    }
+
+    getPosts();
+  }, []);
 
   return (
     <Container>
       <NewPost />
-      <Post contentPost="hello teste asdastgdfashb asdugasyhdgashgd hadsahdh agdhasgvghdgasghjdg asgd dashudashuiasduihdas dashsdahasdjkdas nmdasghdasghasdhdash" id={12135} id_user={4} liked />
-      <Post contentPost="hello" id={12135} id_user={4} liked shared />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
-      <Post contentPost="hello" id={12135} id_user={4} />
+      {
+        posts && posts.map(({id_user, _id, content}) => (
+          <Post 
+            _id={_id}
+            contentPost={content}
+            id_user={id_user}
+          />
+        ))
+      }
     </Container>
   );
 }

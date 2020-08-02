@@ -12,6 +12,7 @@ export default createGlobalStyle`
     max-width: 100vw;
     overflow:hidden;
   }
+  
   *, button, input {
     border:0;
     background:none;

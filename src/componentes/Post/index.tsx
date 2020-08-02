@@ -1,35 +1,78 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import api from '../../services/api';
 import { Container, Avatar, Content, ContentReact, ThumbsUp, Comment, Share } from './styles';
 
 
 interface Props {
-  id: Number;
+  _id: string;
   id_user: Number;
-  contentPost: String;
+  contentPost: string;
   liked?: boolean;
   shared?: boolean;
+  commented?: boolean;
 }
 
-const Post: React.FC<Props> = ({ contentPost, liked, shared }) => {
+const Post: React.FC<Props> = ({ _id, contentPost, liked, shared, commented }) => {
+
+  const [like, setLike] = useState(liked);
+  const [share, setShare] = useState(shared);
+  const [comment, setComment] = useState(commented);
+
+
+  function handleClickLike(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    event.preventDefault();
+    setLike(!like);
+
+    async function createLike(id_post: string) {
+      api.post('/like', {
+        id_post
+      }).then((response) => {
+        console.log(response);
+      });
+    }
+
+    try {
+      createLike(_id);
+      console.log("Deu boom");
+    } catch (error) {
+      setLike(!like);
+    }
+
+    // aqui vai conter uma chamada a API para registro na tabela
+  }
+
+  function handleClickShare(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    event.preventDefault();
+    setShare(!share);
+
+    // aqui vai conter uma chamada a API para registro na tabela
+  }
+
+  function handleClickComment(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    event.preventDefault();
+    setComment(!comment);
+
+    // aqui vai conter uma chamada a API para registro na tabela
+  }
+
   return (
-    <Container>
+    <Container id={_id}>
       <Avatar />
       <Content>
         <p>{contentPost}</p>
       </Content>
       <ContentReact>
-        <div className={liked ? "active " : ""}>
+        <div className={like ? "active " : ""} onClick={handleClickLike}>
           <ThumbsUp />
           <span>Like</span>
         </div>
 
-        <div className="containerAction">
+        <div className={comment ? "active" : ""} onClick={handleClickComment}>
           <Comment />
           <span>Comment</span>
         </div>
 
-        <div className={shared ? "active" : ""} >
+        <div className={share ? "active" : ""} onClick={handleClickShare}>
           <Share />
           <span>Share</span>
         </div>

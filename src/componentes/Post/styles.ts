@@ -59,15 +59,20 @@ export const ContentReact = styled.div`
 
     &.active,
     &:hover {
+
       > svg {
         fill: ${(props) => {
           return props.theme.secondary;
         }};
 
+        transition: all 0.3s;
+
         & + span {
           color: ${(props) => {
             return props.theme.third;
           }};
+          
+          transition: all 0.3s;
         }
       }
     }
@@ -75,8 +80,8 @@ export const ContentReact = styled.div`
 `;
 
 const cssIcon = css`
-  height: 24px;
-  width: 24px;
+  height: 18px;
+  width: 18px;
 
   margin: 0 5px;
 `;

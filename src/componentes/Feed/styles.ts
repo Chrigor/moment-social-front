@@ -9,17 +9,19 @@ export const Container = styled.div`
   overflow-y: scroll;
 
   ::-webkit-scrollbar {
-    width: 6px;
+      width: 6px;
   }
+  
   ::-webkit-scrollbar-thumb {
     background-color: ${(props) => {
       return props.theme.secondary;
     }};
     border-radius: 4px;
   }
+  
   ::-webkit-scrollbar-track {
-    background-color: ${(props) => {
-      return props.theme.third;
-    }};
-  }
+      background-color: ${(props) => {
+        return props.theme.third;
+      }};
+    }
 `;
