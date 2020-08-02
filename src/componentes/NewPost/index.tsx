@@ -13,14 +13,17 @@ const NewPost: React.FC = () => {
 
   const [contentPost, setContentPost] = useState('');
 
-  async function handleClickNewPost(event: React.MouseEvent<HTMLButtonElement>) {
+  function handleClickNewPost(event: React.MouseEvent<HTMLButtonElement>) {
     try {
-      await api.post('/post', {
+      api.post('/post', {
         content: contentPost
       });
-  
+
       console.log('post criado');
+      setContentPost('');
+
     } catch (error) {
+      console.log('Houve um erro');
       console.log(error);
     }
   }
@@ -29,7 +32,7 @@ const NewPost: React.FC = () => {
     <Container>
       <InfoData>
         <Avatar />
-        <InputNewPost placeholder="Publique o que você está pensando ... " onChange={(e) => setContentPost(e.target.value)} />
+        <InputNewPost placeholder="Publique o que você está pensando ... " onChange={(e) => setContentPost(e.target.value)} value={contentPost}/>
       </InfoData>
       <ButtonPost onClick={handleClickNewPost}>
         Publicar

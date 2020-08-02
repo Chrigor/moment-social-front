@@ -45,7 +45,21 @@ const Post: React.FC<Props> = ({ _id, contentPost, liked, shared, commented }) =
     event.preventDefault();
     setShare(!share);
 
-    // aqui vai conter uma chamada a API para registro na tabela
+    async function createShare(id_post: string) {
+      api.post('/share', {
+        id_post
+      }).then((response) => {
+        console.log(response);
+      });
+    }
+
+    try {
+      createShare(_id);
+      console.log("Deu boom");
+    } catch (error) {
+      setShare(!share);
+    }
+
   }
 
   function handleClickComment(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {

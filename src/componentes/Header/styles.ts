@@ -6,7 +6,7 @@ export const Container = styled.div`
   top: 0;
   margin: 0 auto;
   width: 100vw;
-  height: 70px;
+  height: 5vh;
   background-color: ${(props) => {
     return props.theme.secondary;
   }};
