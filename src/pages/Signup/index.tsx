@@ -1,22 +1,12 @@
-import React, { MouseEvent } from 'react';
-import { Link, useHistory} from 'react-router-dom';
-import AllActions from '../../redux/actions';
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { FiMail, FiUser, FiLock } from 'react-icons/fi';
 
 import { Container, Form } from './styles';
 
 const Signup: React.FC = () => {
 
-  const dispatch = useDispatch();
   const history = useHistory();
-
-  function handleClick(event: MouseEvent<HTMLButtonElement>) {
-    event.preventDefault();
-
-    let action = AllActions.UserActions.toggleTheme;
-    dispatch(action());
-  }
 
   function handleSignUp(event: React.SyntheticEvent) {
     event.preventDefault();
@@ -54,16 +44,14 @@ const Signup: React.FC = () => {
 
           <div className="more">
             <Link to="/signin">
-             Já possui uma conta?
+              Já possui uma conta?
             </Link>
-            
+
             <Link to="/activeAccount">
               Já possui uma conta e quer ativa-lá?
             </Link>
           </div>
         </div>
-
-        <button onClick={handleClick}>Press</button>
       </section>
     </Container>
   );

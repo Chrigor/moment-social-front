@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
-import { Container, Avatar, Content, ContentReact, ThumbsUp, Comment, Share } from './styles';
+import { Container, Avatar, Content, ContentReact, ThumbsUp, Comment, Share, PostInfo } from './styles';
 
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   commented?: boolean;
 }
 
-const Post: React.FC<Props> = ({ _id, contentPost, liked, shared, commented }) => {
+const Post: React.FC<Props> = ({ _id, id_user, contentPost, liked, shared, commented }) => {
 
   const [like, setLike] = useState(liked);
   const [share, setShare] = useState(shared);
@@ -71,7 +71,10 @@ const Post: React.FC<Props> = ({ _id, contentPost, liked, shared, commented }) =
 
   return (
     <Container id={_id}>
-      <Avatar />
+      <PostInfo>
+        <Avatar />
+        <strong>{id_user}</strong>
+      </PostInfo>
       <Content>
         <p>{contentPost}</p>
       </Content>

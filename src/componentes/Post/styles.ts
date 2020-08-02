@@ -28,6 +28,8 @@ export const Avatar = styled.div`
   flex-shrink: 0;
   border-radius: 50%;
 
+  margin-right: 8px;
+
   background-color: ${(props) => {
     return props.theme.third;
   }};
@@ -96,3 +98,9 @@ export const Comment = styled(FaComment)<Props>`
 export const Share = styled(FaShare)<Props>`
   ${cssIcon}
 `;
+
+export const PostInfo = styled.div`
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+`
